@@ -23,6 +23,11 @@ namespace hw_dotnet_core
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSingleton(Parking.Instance);
+
+			services.AddScoped<ICarService, CarService>();
+			services.AddScoped<IParkingService, ParkingService>();
+
 			services.AddMvc();
 		}
 
