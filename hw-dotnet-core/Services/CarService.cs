@@ -45,6 +45,13 @@ namespace hwdotnetcore.Services
 
 		public async Task Add(Car car)
 		{
+			var newId = 1;
+			if (_parking.Cars.Count > 0)
+			{
+				newId = _parking.Cars.Max((x) => x.Id) + 1;
+			}
+
+			car.Id = newId;
 			await Task.Run(() => _parking.AddCar(car));
 		}
 	}
