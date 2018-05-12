@@ -22,14 +22,12 @@ namespace ParkingSimulator.Entities
 		private Parking()
 		{
 			_carTypePrice = Settings.Dictionary;
-			_maxParkingSpace = Settings.ParkingSpace;//Exceptions ?
-			_fine = Settings.Fine; //Exceptions ?
+			_maxParkingSpace = Settings.ParkingSpace;
+			_fine = Settings.Fine;
 
 			Cars = new List<Car>(_maxParkingSpace);
 			Transactions = new List<Transaction>();
 		}
-
-		// Intialize?
 
 		public IList<Car> Cars { get; }
 

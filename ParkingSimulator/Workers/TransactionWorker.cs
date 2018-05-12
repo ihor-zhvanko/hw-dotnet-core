@@ -6,7 +6,7 @@ using ParkingSimulator.Entities;
 
 namespace ParkingSimulator.Workers
 {
-
+	// I not really sure, I need this Worker. So I just leave this
 	public class TransactionWorker : BaseWorker, IWorker, IDisposable
 	{
 		private Parking _parking;
@@ -15,7 +15,7 @@ namespace ParkingSimulator.Workers
 		public TransactionWorker()
 		{
 			Timeout = Settings.DumpTimeout;
-			_parking = ParkingSimulator.Instance;
+			_parking = Parking.Instance;
 			_fileName = Settings.TransactionFilename;
 		}
 
