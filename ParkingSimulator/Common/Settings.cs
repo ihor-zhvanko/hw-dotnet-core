@@ -4,7 +4,7 @@ using ParkingSimulator.Entities;
 
 namespace ParkingSimulator.Common
 {
-	public static class Settings
+	internal static class Settings
 	{
 
 		public static int Timeout => 3;
@@ -17,7 +17,7 @@ namespace ParkingSimulator.Common
 			[CarType.Bus] = 2,
 			[CarType.Motorcycle] = 1
 		};
-		public static int ParkingSpace => 3;
+		public static int ParkingSpace => 10;
 		public static double Fine => 1.3; // 30%
 	}
 
