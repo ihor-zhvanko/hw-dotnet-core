@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using hwdotnetcore.Services;
 using ParkingSimulator.Entities;
 using System.Net;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace hwdotnetcore.Controllers
 {
@@ -15,7 +11,7 @@ namespace hwdotnetcore.Controllers
 	[Route("api/[controller]")]
 	public class CarController : Controller
 	{
-		private ICarService _carService;
+		private readonly ICarService _carService;
 
 		public CarController(ICarService carService)
 		{
