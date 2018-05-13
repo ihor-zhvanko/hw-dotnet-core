@@ -28,6 +28,7 @@ namespace hw_dotnet_core
 			services.AddSingleton(Parking.Instance);
 
 			services.AddScoped<ICarService, CarService>();
+			services.AddScoped<IParkingService, ParkingService>();
 
 			services.AddMvc();
 		}
