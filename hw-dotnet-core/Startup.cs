@@ -29,6 +29,7 @@ namespace hw_dotnet_core
 
 			services.AddScoped<ICarService, CarService>();
 			services.AddScoped<IParkingService, ParkingService>();
+			services.AddScoped<ITransactionService, TransactionService>();
 
 			services.AddMvc();
 		}

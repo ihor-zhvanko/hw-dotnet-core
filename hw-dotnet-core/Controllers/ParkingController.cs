@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace hwdotnetcore.Controllers
 {
+	[Produces("application/json")]
 	[Route("api/[controller]")]
 	public class ParkingController : Controller
 	{
