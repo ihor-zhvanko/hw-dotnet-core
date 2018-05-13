@@ -10,7 +10,7 @@ namespace hwdotnetcore.Services
 	{
 		Task<IList<Transaction>> GetAll();
 		Task<IList<Transaction>> GetForLastMinute(int? carId);
-		Task TopUpBalance(int carId, int amount);
+		Task TopUpBalance(int carId, double amount);
 	}
 
 	public class TransactionService : ITransactionService
@@ -38,7 +38,7 @@ namespace hwdotnetcore.Services
 			return await Task.Run(() => transactions.ToList());
 		}
 
-		public async Task TopUpBalance(int carId, int amount)
+		public async Task TopUpBalance(int carId, double amount)
 		{
 			await Task.Run(() => _parking.TopUpBalance(carId, amount));
 		}

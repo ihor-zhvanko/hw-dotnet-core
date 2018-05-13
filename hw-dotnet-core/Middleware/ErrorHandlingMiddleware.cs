@@ -41,10 +41,11 @@ namespace hwdotnetcore.Middleware
 		{
 			var code = HttpStatusCode.InternalServerError; // 500 if unexpected
 
-			if (exception is ParkingUnknownCarException) code = HttpStatusCode.BadRequest;
+			if (exception is ParkingUnknownCarException) code = HttpStatusCode.NotFound;
 			else if (exception is ArgumentException) code = HttpStatusCode.BadRequest;
 			else if (exception is ParkingExceededMaxSpaceException) code = HttpStatusCode.Forbidden;
 			else if (exception is ForbiddenException) code = HttpStatusCode.Forbidden;
+			else if (exception is NotFoundException) code = HttpStatusCode.NotFound;
 
 			var resp = new { error = exception.Message, stack = _env.IsDevelopment() ? exception.StackTrace : "" };
 			var result = JsonConvert.SerializeObject(resp);

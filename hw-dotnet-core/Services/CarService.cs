@@ -34,9 +34,14 @@ namespace hwdotnetcore.Services
 
 		public async Task<Car> GetById(int id)
 		{
-			var car = Task.Run(() => _parking.Cars.FirstOrDefault(x => x.Id == id));
+			var car = await Task.Run(() => _parking.Cars.FirstOrDefault(x => x.Id == id));
 
-			return await car;
+			if (car == null)
+			{
+				throw new NotFoundException("Car with such id not found");
+			}
+
+			return car;
 		}
 
 		public async Task Remove(int id)
