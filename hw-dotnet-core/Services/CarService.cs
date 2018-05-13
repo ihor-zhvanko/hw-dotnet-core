@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using hwdotnetcore.Exceptions;
 using ParkingSimulator.Entities;
 
 namespace hwdotnetcore.Services
@@ -12,7 +13,7 @@ namespace hwdotnetcore.Services
 
 		Task<Car> GetById(int id);
 
-		Task<bool> Remove(int id);
+		Task Remove(int id);
 
 		Task Add(Car car);
 	}
@@ -38,9 +39,14 @@ namespace hwdotnetcore.Services
 			return await car;
 		}
 
-		public async Task<bool> Remove(int id)
+		public async Task Remove(int id)
 		{
-			return await Task.Run(() => _parking.RemoveCar(id));
+			var success = await Task.Run(() => _parking.RemoveCar(id));
+
+			if (!success)
+			{
+				throw new ForbiddenException("Unable to remove car. Please top up a balance.");
+			}
 		}
 
 		public async Task Add(Car car)
