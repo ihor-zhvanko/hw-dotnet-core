@@ -20,6 +20,10 @@ namespace hwdotnetcore.Controllers
 			_parkingService = parkingService;
 		}
 
+		/// <summary>
+		/// Get free spaces quantity
+		/// </summary>
+		/// <returns>{ "free": uint }</returns>
 		[HttpGet("free")]
 		public async Task<object> GetFree()
 		{
@@ -31,6 +35,10 @@ namespace hwdotnetcore.Controllers
 			};
 		}
 
+		/// <summary>
+		/// Get not free spaces quantity
+		/// </summary>
+		/// <returns>{ "notfree": uint }</returns>
 		[HttpGet("notfree")]
 		public async Task<object> GetNotFree()
 		{
@@ -42,6 +50,10 @@ namespace hwdotnetcore.Controllers
 			};
 		}
 
+		/// <summary>
+		/// Get income of parking from begining of times
+		/// </summary>
+		/// <returns>{ "income": double }</returns>
 		[HttpGet("income")]
 		public async Task<object> GetIncome()
 		{
