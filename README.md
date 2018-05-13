@@ -35,11 +35,11 @@ This project was created on .NET Core as 3rd Homework. All logic with Parking wa
 
 ### Mac Os
 
-Install XCode Tools
-Install Visual Studio For Mac
-When you've opened solution just build and enjoy :)
+* Install XCode Tools
+* Install Visual Studio For Mac
+* When you've opened solution just build and enjoy :)
 
 ### Windows
 
-Install Visual Studio Community 2017
-If project doesn't build, then restore NuGet Packages and rebuild it.
+* Install Visual Studio Community 2017
+* If project doesn't build, then restore NuGet Packages and rebuild it.
